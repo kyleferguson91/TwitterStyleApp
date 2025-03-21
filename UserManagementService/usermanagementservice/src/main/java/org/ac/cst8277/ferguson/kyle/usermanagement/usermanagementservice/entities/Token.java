@@ -11,10 +11,19 @@ public class Token {
     @Id
     @Column(name = "token", length = 36)
     private String token;
-    
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+      
+        public Token() {}
+
+       
+        public Token(String token, User user) {
+            this.token = token;
+            this.user = user;
+        }
 
 
     public String getToken() {
